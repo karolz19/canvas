@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" width="800" height="600" style="border: 1px solid black;"></canvas><br>
+
+    <script>
+        let c = document.getElementById('c');
+        let ctx = c.getContext('2d'); 
+        ctx.setTransform(1, 0, 0, -1, 400, 600);
+
+        ctx.moveTo(400, 0);
+        ctx.lineTo(400, 600);
+        ctx.stroke();
+
+        ctx.moveTo(0, 300);
+        ctx.lineTo(800, 300);
+        ctx.stroke();
+
+        for(let i = -400; i<=400; i=i+) {
+            ctx.moveTo(i, 290);
+            ctx.lineTo(i, 310);
+            ctx.stroke(); 
+            ctx.fillText(i/100, i+10, 280);
+        }
+        
+        for(let i = 0; i<=600; i=i+100) {
+            ctx.moveTo(390, i);
+            ctx.lineTo(410, i);
+            ctx.stroke(); 
+            ctx.fillText(i/100, 410, i-10);
+        }
+
+        ctx.fillRect(100, 100, 10, 10);
+    </script>
+</body>
+</html>
